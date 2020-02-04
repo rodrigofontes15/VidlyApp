@@ -7,9 +7,22 @@
     var className = Model.Customers.Count > 0 ? "popular" : null;
 }
 
-<h2 class="@className">@Model.Movie.Name</h2>
+<h2 class="@className"></h2>
+@if (@Model.Movies.Count == 0)
+{
+    <p>no movies</p>
+}
+else
+{
+    <ul>
+        @foreach (var movies in Model.Movies)
+        {
+            <li>@movies.Name</li>
+        }
+    </ul>
+}
 
-@if (@Model.Customers.Count==0)
+@if (@Model.Customers.Count == 0)
 {
     <p>no one rented this movie</p>
 }
@@ -22,4 +35,5 @@ else
         }
     </ul>
 }
+
 

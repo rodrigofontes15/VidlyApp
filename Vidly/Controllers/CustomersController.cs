@@ -8,29 +8,26 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    public class MoviesController : Controller
+    public class CustomersController : Controller
     {
-        // GET: Movies/Movies
-      
-        public ActionResult Movies()
+        // GET: Customers/Customers
+        
+        public ActionResult Customers()
+        
         {
 
-            var movie = new List<Movie>
+            var customers = new List<Customer>
             {
-                new Movie { Name = "Blade", Id=1},
-                new Movie { Name = "Corvo", Id=2}
+                new Customer { Name = "Pablo", Id=1},
+                new Customer { Name = "Picasso", Id=2}
             };
- 
 
             var viewModel = new RandomMovieViewModel
             {
-                Movies = movie
-               
+                Customers = customers
             };
 
             return View(viewModel);
         }
-       
     }
-        
 }
